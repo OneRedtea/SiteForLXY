@@ -272,7 +272,7 @@
                     //如果是长页面，需判断一下是否到底
                     if (this.curPage[0].pageScrollHeight && pageScrollTop < this.curPage[0].pageScrollHeight) {
                         return;
-                    } else if (distance < -20) {
+                    } else if (distance < 0) {
                         this.next();
                     } else {
                         this.moveTo(this.index);
