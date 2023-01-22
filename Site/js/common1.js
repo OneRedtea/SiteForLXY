@@ -3,6 +3,7 @@ var documentWidth=document.documentElement.clientWidth;//页面DOM的宽度
 var containerWidth=documentWidth*0.92;//容器的宽度
 var cellWidth=documentWidth*0.18;
 var cellSpace=documentWidth*0.04;
+var isWin = false;
 console.log(documentWidth,containerWidth,cellWidth,cellSpace);
 //获取上边的位置
 function getPosTop(i,j){
@@ -124,15 +125,21 @@ function noBlockVertical(col,row1,row2,nums){
 function updateScore(score){
 	$('#score').text(score);
 	//判断最大数
+	var t=0;
 	for(var i=0;i<4;i++){
 		for(var j=0;j<4;j++){
-			if(nums[i][j]>=128){
-				$('#title1').text("胜利");
-				$('#title2').text("已获得LXY专属红包,请打开支付宝口令红包领取");
-				$('#score').text("LXYNBPLUS");
-				$('#txt').text("红包密码");
-			}
+			if(nums[i][j]>t) t=nums[i][j];
 		}
+	}
+	if(t>=2048&&isWin==false){
+		isWin=true;
+		alert('游戏胜利!请留意游戏界面呀');
+			$('#title1').text("胜利");
+			$('#title2').text("已获得LXY专属红包,请打开支付宝口令红包领取");
+			$('#score').text("LXYNBPLUS");
+			var bg = document.getElementById("score-wrapper");
+			bg.style.width="80%";
+			$('#txt').text("红包密码");
 	}
 }
 //判断是否不能移动

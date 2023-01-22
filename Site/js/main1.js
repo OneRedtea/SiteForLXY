@@ -10,10 +10,6 @@ var endy=0;
 $(document).ready(function(){
 	newgame();
 });
-// document.body.addEventListener('touchmove',function(e){
-// 	e.preventDefault();
-// },{passive:false})
-//开始新游戏
 function newgame(){
 	if(documentWidth>500){
 		containerWidth=500;
@@ -25,6 +21,12 @@ function newgame(){
 	}
 
 	init();
+	$('#title1').text("2048");
+	$('#title2').text("For LXY");
+	var bg = document.getElementById("score-wrapper");
+	bg.style.width="auto";
+	$('#txt').text("score:");
+
 
 	//在随机的两个单元格生成数字
 	generateOneNumber();
