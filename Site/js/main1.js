@@ -10,7 +10,9 @@ var endy=0;
 $(document).ready(function(){
 	newgame();
 });
-
+// document.body.addEventListener('touchmove',function(e){
+// 	e.preventDefault();
+// },{passive:false})
 //开始新游戏
 function newgame(){
 	if(documentWidth>500){
