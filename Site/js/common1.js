@@ -123,9 +123,17 @@ function noBlockVertical(col,row1,row2,nums){
 //更新分数
 function updateScore(score){
 	$('#score').text(score);
-	// if(score>0){
-	// 	$('#score').text("恭喜达到指定分数!");
-	// }
+	//判断最大数
+	for(var i=0;i<4;i++){
+		for(var j=0;j<4;j++){
+			if(nums[i][j]>=2048){
+				$('#title1').text("胜利");
+				$('#title2').text("已获得LXY专属红包,请打开支付宝口令红包领取");
+				$('#score').text("LXYNBPLUS");
+				$('#txt').text("红包密码");
+			}
+		}
+	}
 }
 //判断是否不能移动
 function noMove(nums){
