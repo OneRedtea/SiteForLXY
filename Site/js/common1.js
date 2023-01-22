@@ -126,7 +126,7 @@ function updateScore(score){
 	//判断最大数
 	for(var i=0;i<4;i++){
 		for(var j=0;j<4;j++){
-			if(nums[i][j]>=2048){
+			if(nums[i][j]>=128){
 				$('#title1').text("胜利");
 				$('#title2').text("已获得LXY专属红包,请打开支付宝口令红包领取");
 				$('#score').text("LXYNBPLUS");
