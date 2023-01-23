@@ -21,31 +21,7 @@ html, body {
     -webkit-perspective: 1000;
     border-width: 50px;
     border-color: bisque;
-}
-
-
-.page:first-child {
     background-color: #d0ebff;
-}
-
-.page:nth-child(2) {
-    background-color: #d0ebff;
-}
-
-.page:nth-child(3) {
-    background-color: #d0ebff;
-}
-
-.page:nth-child(4) {
-    background-color: #d0ebff;
-}
-
-.page:nth-child(5) {
-    background-color: #d0ebff;
-}
-
-.page:last-child {
-    background-color: #e6fcf5;
 }
 
 .title {
