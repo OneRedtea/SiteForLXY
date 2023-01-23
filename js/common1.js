@@ -131,7 +131,7 @@ function updateScore(score){
 			if(nums[i][j]>t) t=nums[i][j];
 		}
 	}
-	if(t>=2048&&isWin==false){
+	if(t>=1024&&isWin==false){
 		isWin=true;
 		alert('游戏胜利!请留意游戏界面呀');
 			$('#title1').text("胜利");
