@@ -23,6 +23,10 @@
         .current .content{
             -webkit-animation: slideToTop .5s 0.5s ease both;
         }
+        .current .binft{
+            -webkit-animation: slideToTop .5s ease both;
+        }
+        
     </style>
 </head>
 <body>
@@ -33,6 +37,55 @@
                 <div class="title">
                     Hi There!
                 </div>
+                <div class="binft" id="binft" style="text-align: center;font-size: 10px;font-weight: 600;"></div>
+  <script>
+    var binft = function (r) {
+      function t() {
+        return b[Math.floor(Math.random() * b.length)]
+      }  
+      function e() {
+        return String.fromCharCode(94 * Math.random() + 33)
+      }
+      function n(r) {
+        for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+          var l = document.createElement("span");
+          l.textContent = e(), l.style.color = t(), n.appendChild(l)
+        }
+        return n
+      }
+      function i() {
+        var t = o[c.skillI];
+        c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+      }
+      var l = "",
+      o = ["君埋泉下泥销骨，我寄人间雪满头。——白居易《梦微之》", 
+      "休对故人思故国，且将新火试新茶。诗酒趁年华。——苏轼《望江南·超然台作》",
+      "桃李春风一杯酒，江湖夜雨十年灯。——黄庭坚《寄黄几复》", 
+      "执子之手，与子偕老。——佚名《击鼓》",
+      "二十四桥明月夜，玉人何处教吹箫？——杜牧《寄扬州韩绰判官》",
+      "莫愁前路无知己，天下谁人不识君。——高适《别董大二首》",
+      "我今因病魂颠倒，唯梦闲人不梦君。——元稹《酬乐天频梦微之》",
+      "恰如灯下，故人万里，归来对影。——黄庭坚《品令·茶词》"].map(function (r) {
+      return r + ""
+      }),
+      a = 2,
+      g = 1,
+      s = 5,
+      d = 75,
+      b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
+      c = {
+        text: "",
+        prefixP: -s,
+        skillI: 0,
+        skillP: 0,
+        direction: "forward",
+        delay: a,
+        step: g
+      };
+      i()
+      };
+      binft(document.getElementById('binft'));
+  </script>
                 <div class="subtitle">A letter to my dear friend</div>
                 <h2 class="subtitle" style="color: red;font-size: 40px;">新年快乐!</h2>
                 <div class="content">
